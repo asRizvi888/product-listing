@@ -34,7 +34,7 @@ Follow these steps to get started with the react-vite-ui template:
 2. Navigate to the project directory:
 
    ```bash
-   cd frontend
+   cd product-listing/frontend
    ```
 
 3. Install the dependencies:
