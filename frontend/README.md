@@ -1,8 +1,6 @@
-# React + Vite + TypeScript Template (react-vite-ui)
+# Product Listing App
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Dan5py/react-vite-ui/blob/main/LICENSE)
-
-A React + Vite template powered by shadcn/ui.
+A React + Vite application powered by shadcn/ui.
 
 ## 🎉 Features
 
@@ -21,7 +19,7 @@ A React + Vite template powered by shadcn/ui.
 Make sure you have the following installed on your development machine:
 
 - Node.js (version 16 or above)
-- pnpm (package manager)
+- yarn (package manager)
 
 ## 🚀 Getting Started
 
@@ -30,56 +28,33 @@ Follow these steps to get started with the react-vite-ui template:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dan5py/react-vite-ui.git
+   git clone https://github.com/asRizvi888/product-listing.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd react-vite-ui
+   cd frontend
    ```
 
 3. Install the dependencies:
 
    ```bash
-   pnpm install
+   yarn install
    ```
 
 4. Start the development server:
 
    ```bash
-   pnpm dev
+   yarn dev
    ```
 
 ## 📜 Available Scripts
 
-- pnpm dev - Starts the development server.
-- pnpm build - Builds the production-ready code.
-- pnpm lint - Runs ESLint to analyze and lint the code.
-- pnpm preview - Starts the Vite development server in preview mode.
-
-## 📂 Project Structure
-
-The project structure follows a standard React application layout:
-
-```python
-react-vite-ui/
-  ├── node_modules/      # Project dependencies
-  ├── public/            # Public assets
-  ├── src/               # Application source code
-  │   ├── components/    # React components
-  │   │   └── ui/        # shadc/ui components
-  │   ├── styles/        # CSS stylesheets
-  │   ├── lib/           # Utility functions
-  │   ├── App.tsx        # Application entry point
-  │   └── index.tsx      # Main rendering file
-  ├── .eslintrc.json     # ESLint configuration
-  ├── index.html         # HTML entry point
-  ├── postcss.config.js  # PostCSS configuration
-  ├── tailwind.config.js # Tailwind CSS configuration
-  ├── tsconfig.json      # TypeScript configuration
-  └── vite.config.ts     # Vite configuration
-```
+- yarn dev - Starts the development server.
+- yarn build - Builds the production-ready code.
+- yarn lint - Runs ESLint to analyze and lint the code.
+- yarn preview - Starts the Vite development server in preview mode.
 
 ## 📄 License
 
