@@ -42,6 +42,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <Input
               id="email"
               type="email"
+              name="email"
               placeholder="mail@example.com"
               required
               onChange={fieldOnChange}
@@ -52,6 +53,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <Input
               id="password"
               type="password"
+              name="password"
               minLength={8}
               required
               onChange={fieldOnChange}
@@ -62,6 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               <Label htmlFor="confirm-password">Confirm Password</Label>
               <Input
                 id="confirm-password"
+                name="confirm-password"
                 type="password"
                 minLength={8}
                 required

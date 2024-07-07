@@ -22,10 +22,10 @@ const Login = () => {
   });
 
   const fieldOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = event.target;
+    const { name, value } = event.target;
     setFormData({
       ...formData,
-      [id]: value,
+      [name]: value,
     });
   };
 

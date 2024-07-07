@@ -34,8 +34,9 @@ exports.getProduct = async (req, res) => {
 };
 
 exports.addProduct = async (req, res) => {
+  const { user_id } = req.user;
   try {
-    await ProductService.addProduct(req.body);
+    await ProductService.addProduct({ ...req.body, user_id });
 
     return res.status(200).json({
       status: "success",
