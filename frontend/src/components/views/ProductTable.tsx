@@ -14,10 +14,9 @@ import {
   TableBody,
   TableCell,
 } from "@/components/ui/table";
-import { SVGProps, useState } from "react";
-import { JSX } from "react/jsx-runtime";
+import { useState } from "react";
 import { Badge } from "../ui/badge";
-import { Edit, Plus, Trash } from "lucide-react";
+import { ArrowUpDownIcon, Edit, Plus, Trash } from "lucide-react";
 import React from "react";
 
 type DataItem = {
@@ -28,9 +27,11 @@ type DataItem = {
   vendor: string;
 };
 
+type Direction = "ascending" | "descending";
+
 type SortConfig = {
   key: keyof DataItem;
-  direction: "ascending" | "descending";
+  direction: Direction;
 };
 
 const data: DataItem[] = [
@@ -71,8 +72,8 @@ const ProductTable = () => {
     return data;
   }, [data, sortConfig]);
 
-  const requestSort = (key) => {
-    let direction = "ascending";
+  const requestSort = (key: keyof DataItem) => {
+    let direction: Direction = "ascending";
     if (sortConfig.key === key && sortConfig.direction === "ascending") {
       direction = "descending";
     }
@@ -166,29 +167,5 @@ const ProductTable = () => {
     </div>
   );
 };
-
-function ArrowUpDownIcon(
-  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
-) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m21 16-4 4-4-4" />
-      <path d="M17 20V4" />
-      <path d="m3 8 4-4 4 4" />
-      <path d="M7 4v16" />
-    </svg>
-  );
-}
 
 export default ProductTable;

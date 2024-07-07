@@ -8,15 +8,21 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { ChangeEvent } from "react";
 
-const LoginForm = () => {
-  const [loginVisible, setLoginVisible] = useState<boolean>(true);
+interface LoginFormProps {
+  loginVisible: boolean;
+  fieldOnChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: () => void;
+  toggleForm: () => void;
+}
 
-  const toggleForm = () => {
-    setLoginVisible((prev) => !prev);
-  };
-
+const LoginForm: React.FC<LoginFormProps> = ({
+  loginVisible,
+  fieldOnChange,
+  onSubmit,
+  toggleForm,
+}) => {
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader className="space-y-1">
@@ -38,19 +44,32 @@ const LoginForm = () => {
               type="email"
               placeholder="mail@example.com"
               required
+              onChange={fieldOnChange}
             />
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required />
+            <Input
+              id="password"
+              type="password"
+              minLength={8}
+              required
+              onChange={fieldOnChange}
+            />
           </div>
           {!loginVisible && (
             <div className="space-y-2">
               <Label htmlFor="confirm-password">Confirm Password</Label>
-              <Input id="confirm-password" type="password" required />
+              <Input
+                id="confirm-password"
+                type="password"
+                minLength={8}
+                required
+                onChange={fieldOnChange}
+              />
             </div>
           )}
-          <Button type="submit" className="w-full">
+          <Button className="w-full" onClick={onSubmit}>
             {loginVisible ? "Login" : "Signup"}
           </Button>
         </div>
