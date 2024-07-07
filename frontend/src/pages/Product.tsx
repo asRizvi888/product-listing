@@ -24,8 +24,13 @@ const Product = () => {
 
   const handleAdd = async (data: ProductType) => {
     try {
-      await addProduct(data);
+      const { message } = await addProduct(data);
       await fetchProduts();
+
+      toast({
+        description: message,
+        className: "bg-green-500",
+      });
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -36,8 +41,13 @@ const Product = () => {
 
   const handleUpdate = async (data: ProductType) => {
     try {
-      await updateProduct(data);
+      const { message } = await updateProduct(data);
       await fetchProduts();
+
+      toast({
+        description: message,
+        className: "bg-green-500",
+      });
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -48,8 +58,13 @@ const Product = () => {
 
   const handleDelete = async (product_id: string) => {
     try {
-      await deleteProduct(product_id);
+      const { message } = await deleteProduct(product_id);
       await fetchProduts();
+
+      toast({
+        description: message,
+        className: "bg-green-500",
+      });
     } catch (error: any) {
       toast({
         variant: "destructive",

@@ -65,8 +65,7 @@ const Login = () => {
       });
       setLoginVisible(true);
       toast({
-        variant: "default",
-        color: "green-500",
+        className: "bg-green-500",
         description: response.message,
       });
     } catch (error: any) {
